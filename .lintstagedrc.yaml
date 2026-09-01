@@ -1,0 +1,2 @@
+'(apps|packages)/**/*.{js,jsx,mjs,ts,tsx,mts,mdx}': ['eslint --fix', 'prettier --write --ignore-path .prettierignore']
+'*.{json,md,css,html,yml,yaml,scss}': ['prettier --write --ignore-path .prettierignore']

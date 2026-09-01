@@ -1,0 +1,41 @@
+# Copyright (c) 2026 Syahril Akbar Atthoriq. All Rights Reserved.
+
+## SOURCE CODE ACCESS & PROPRIETARY NOTICE
+
+This repository is a personal portfolio created and maintained by Syahril Akbar Atthoriq ("Owner").
+It is made publicly accessible strictly for the purpose of personal evaluation,
+technical reference, and code review by prospective clients, recruiters, and peers.
+
+## TERMS AND CONDITIONS
+
+### 1. PERMITTED USES
+
+- You may view, browse, and inspect the source code within this repository via GitHub/Git services.
+- You may refer to the architectural patterns, design structures, and methodologies used herein
+  for learning and educational purposes.
+- You may clone or download a local copy of this repository solely for personal, non-commercial inspection.
+
+### 2. RESTRICTIONS
+
+Unless explicitly authorized in writing by the Owner, you are STRICTLY PROHIBITED from:
+
+- Copying, duplicating, reproducing, or redistributing any part of this repository, in whole or in part, into any other project or repository.
+- Modifying, transforming, or creating derivative works based on any portion of this codebase.
+- Using, deploying, or integrating any code, assets, UI components, or logic contained in this repository for commercial, enterprise, or revenue-generating purposes.
+- Using, deploying, or integrating any code from this repository for non-commercial software applications intended for public or production distribution.
+- Claiming ownership, copyright, or authorship of any code, design, or asset in this repository.
+
+### 3. MONOREPO SPECIFIC PACKAGES
+
+- All apps, microservices, packages, UI libraries, and shared utilities located within this monorepo fall strictly under these terms unless a package directory explicitly contains a separate, independent `LICENSE` file (e.g., an open-source MIT License).
+
+### 4. NO WARRANTY
+
+THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE OWNER BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+### 5. CONTACT & INQUIRIES
+
+For permissions, licensing inquiries, or business opportunities, please contact:
+
+- **Email:** syahrilakbaraa@gmail.com
+- **Website:** https://syahakato.site

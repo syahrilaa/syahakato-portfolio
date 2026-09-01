@@ -1,0 +1,16 @@
+.next/
+.turbo/
+_next/
+__tmp__/
+dist/
+target/
+compiled/
+
+node_modules/
+*.log
+*.lock
+*.tsbuildinfo
+coverage/
+.idea/
+
+pnpm-lock.yaml

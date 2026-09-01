@@ -1,0 +1,28 @@
+{
+  "name": "@syahakato/monorepo",
+  "version": "0.0.0",
+  "description": "Monorepo of Syahril Akbar Atthoriq personal portfolio website.",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "format": "prettier --write . --ignore-path .prettierignore",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@syahakato/internals": "workspace:^",
+    "@types/node": "^26.4.0",
+    "eslint": "^10.9.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.4.1",
+    "prettier": "^3.9.6",
+    "turbo": "^2.10.12",
+    "typescript": "^6.0.3"
+  },
+  "engines": {
+    "node": ">=24.x"
+  },
+  "packageManager": "pnpm@11.22.0"
+}

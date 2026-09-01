@@ -1,0 +1,8 @@
+packages:
+  - 'packages/*'
+  - 'apps/*'
+allowBuilds:
+  unrs-resolver: true
+overrides:
+  typescript: '^6.0.3'
+  '@types/node': '^26.4.0'
