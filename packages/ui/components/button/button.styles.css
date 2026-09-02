@@ -1,0 +1,280 @@
+.btn {
+  @apply relative isolate inline-flex w-fit items-center justify-center whitespace-nowrap select-none outline-none cursor-pointer font-semibold transform-gpu;
+
+  --btn-background: transparent;
+  --btn-color: currentColor;
+  --btn-border-color: transparent;
+  --btn-ring-color: currentColor;
+  --btn-state-layer: transparent;
+  --btn-state-opacity: 1;
+  --btn-hover-opacity: 1;
+  --btn-disabled-opacity: 0.5;
+  --btn-loading-opacity: 0.8;
+  --btn-press-scale: 0.98;
+  --btn-radius: calc(infinity * 1px);
+
+  background-color: var(--btn-background);
+  color: var(--btn-color);
+  border-color: var(--btn-border-color);
+  -webkit-tap-highlight-color: transparent;
+  border-radius: var(--btn-radius);
+
+  transition-property: background-color, border-color, color, box-shadow, opacity, transform;
+  transition-duration: var(--duration-normal);
+  transition-timing-function: var(--ease-smooth);
+
+  &::before {
+    content: '';
+    @apply pointer-events-none absolute inset-0 z-0;
+    background-color: var(--btn-state-layer);
+    opacity: 0;
+    border-radius: var(--btn-radius);
+    transition: opacity var(--duration-normal) var(--ease-smooth);
+  }
+
+  & > :not(svg) {
+    @apply relative z-10;
+  }
+
+  &:has(> :is(svg, [data-content*='icon'], [data-content='spinner'])):not(
+      :has(> :is(span, p, div, a, button, strong, em, b):not(.sr-only))
+    ) {
+    padding: 0 !important;
+  }
+
+  @media (hover: hover) {
+    &:hover:not(:disabled):not([aria-disabled='true']):not([data-loading='true']):not([data-pending='true'])::before,
+    &[data-hovered='true']::before {
+      opacity: var(--btn-hover-opacity);
+    }
+  }
+
+  &:active:not(:disabled):not([aria-disabled='true']):not([data-loading='true']):not([data-pending='true']),
+  &[data-pressed='true'] {
+    transform: scale(var(--btn-press-scale));
+  }
+
+  &:active:not(:disabled):not([aria-disabled='true']):not([data-loading='true']):not([data-pending='true'])::before,
+  &[data-pressed='true']::before {
+    opacity: calc(var(--btn-state-opacity) * 1.35);
+  }
+
+  &:focus-visible,
+  &[data-focus-visible='true'] {
+    @apply ring-2 ring-offset-0;
+    --tw-ring-color: var(--btn-ring-color);
+    --tw-ring-offset-color: var(--background, transparent);
+  }
+
+  &:disabled,
+  &[aria-disabled='true'] {
+    @apply cursor-not-allowed pointer-events-none;
+    opacity: var(--btn-disabled-opacity);
+  }
+
+  &[data-loading='true'],
+  &[data-pending='true'] {
+    @apply cursor-wait pointer-events-none;
+    opacity: var(--btn-loading-opacity);
+  }
+
+  &:is(:disabled, [aria-disabled='true'], [data-loading='true'], [data-pending='true'])::before {
+    opacity: 0;
+  }
+
+  & svg,
+  & img {
+    @apply pointer-events-none shrink-0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition-duration: 1ms;
+
+    &::before,
+    &::after {
+      transition-duration: 1ms;
+    }
+
+    &:active:not(:disabled):not([aria-disabled='true']),
+    &[data-pressed='true'] {
+      transform: none;
+    }
+  }
+}
+
+.btn:has(> :is(svg, [data-content*='icon'], [data-content='spinner'])):not(
+    :has(> :is(span, p, div, a, button, strong, em, b):not(.sr-only))
+  ) {
+  & svg,
+  & [data-content*='icon'],
+  & [data-content='spinner'] {
+    @apply size-6;
+  }
+}
+
+.btn-sm,
+[data-size='sm'] {
+  @apply h-8 px-3 gap-2 text-sm md:h-9 md:px-4;
+
+  & svg,
+  & [data-content*='icon'],
+  & [data-content='spinner'] {
+    @apply size-4;
+  }
+
+  &:has(> :is(svg, [data-content*='icon'], [data-content='spinner'])):not(
+      :has(> :is(span, p, div, a, button, strong, em, b):not(.sr-only))
+    ) {
+    @apply size-8 md:size-9;
+  }
+}
+
+.btn-md,
+[data-size='md'] {
+  @apply h-9 px-4 gap-2.5 text-base md:h-10 md:px-5;
+
+  & svg,
+  & [data-content*='icon'],
+  & [data-content='spinner'] {
+    @apply size-5;
+  }
+
+  &:has(> :is(svg, [data-content*='icon'], [data-content='spinner'])):not(
+      :has(> :is(span, p, div, a, button, strong, em, b):not(.sr-only))
+    ) {
+    @apply size-9 md:size-10;
+  }
+}
+
+.btn-lg,
+[data-size='lg'] {
+  @apply h-10 px-5 gap-3 text-lg md:h-11 md:px-6;
+
+  & svg,
+  & [data-content*='icon'],
+  & [data-content='spinner'] {
+    @apply size-6;
+  }
+
+  &:has(> :is(svg, [data-content*='icon'], [data-content='spinner'])):not(
+      :has(> :is(span, p, div, a, button, strong, em, b):not(.sr-only))
+    ) {
+    @apply size-10 md:size-11;
+  }
+}
+
+.btn-primary,
+[data-variant='primary'] {
+  --btn-primary-state-layer: color-mix(in srgb, var(--on-primary) 10%, transparent);
+  --btn-background: var(--primary);
+  --btn-color: var(--on-primary);
+  --btn-ring-color: color-mix(in srgb, var(--primary) 72%, transparent);
+  --btn-state-layer: var(--btn-primary-state-layer);
+}
+
+.btn-secondary,
+[data-variant='secondary'] {
+  --btn-secondary-state-layer: color-mix(in srgb, var(--on-secondary) 10%, transparent);
+  --btn-background: var(--secondary);
+  --btn-color: var(--on-secondary);
+  --btn-ring-color: color-mix(in srgb, var(--secondary) 72%, transparent);
+  --btn-state-layer: var(--btn-secondary-state-layer);
+}
+
+.btn-tertiary,
+[data-variant='tertiary'] {
+  --btn-tertiary-state-layer: color-mix(in srgb, var(--on-tertiary) 10%, transparent);
+  --btn-background: var(--tertiary);
+  --btn-color: var(--on-tertiary);
+  --btn-ring-color: color-mix(in srgb, var(--tertiary) 72%, transparent);
+  --btn-state-layer: var(--btn-tertiary-state-layer);
+}
+
+.btn-outline,
+[data-variant='outline'] {
+  --btn-outline-state-layer: color-mix(in srgb, var(--on-surface) 8%, transparent);
+  --btn-background: transparent;
+  --btn-color: var(--primary);
+  --btn-border-color: color-mix(in srgb, var(--primary) 45%, transparent);
+  --btn-ring-color: var(--primary);
+  --btn-state-layer: var(--btn-outline-state-layer);
+
+  @apply border ring-1 ring-inset;
+  --tw-ring-color: var(--btn-border-color);
+}
+
+.btn-ghost,
+[data-variant='ghost'] {
+  --btn-ghost-state-layer: color-mix(in srgb, var(--on-surface) 8%, transparent);
+  --btn-background: transparent;
+  --btn-color: var(--on-surface);
+  --btn-ring-color: var(--on-surface);
+  --btn-state-layer: var(--btn-ghost-state-layer);
+}
+
+.btn-link,
+[data-variant='link'] {
+  --btn-background: transparent !important;
+  --btn-color: var(--primary, currentColor);
+  --btn-ring-color: var(--btn-color);
+  --btn-state-layer: transparent;
+  --btn-press-scale: 1;
+
+  @apply relative h-auto px-0.5 rounded-none shadow-none;
+
+  &::before {
+    @apply hidden;
+  }
+
+  &::after {
+    content: '';
+    @apply pointer-events-none absolute inset-x-0 bottom-0 z-10 bg-current;
+    height: 1px;
+    transform: scaleX(0);
+    transform-origin: center;
+    opacity: 0;
+    transition:
+      transform 180ms cubic-bezier(0.2, 0, 0, 1),
+      opacity 180ms ease;
+  }
+
+  @media (hover: hover) {
+    &:hover:not(:disabled):not([aria-disabled='true']):not([data-loading='true']):not([data-pending='true'])::after,
+    &[data-hovered='true']::after {
+      transform: scaleX(1);
+      opacity: 1;
+    }
+  }
+
+  &:focus-visible,
+  &[data-focus-visible='true'] {
+    @apply rounded-sm;
+  }
+}
+
+.btn[aria-busy='true'],
+.btn[data-loading='true'],
+.btn[data-pending='true'] {
+  --btn-hover-opacity: 0;
+}
+
+@media (forced-colors: active) {
+  .btn {
+    forced-color-adjust: auto;
+    border: 1px solid ButtonText;
+
+    &:focus-visible,
+    &[data-focus-visible='true'] {
+      outline: 2px solid Highlight;
+      outline-offset: 2px;
+      box-shadow: none;
+    }
+  }
+
+  .btn-ghost,
+  [data-variant='ghost'],
+  .btn-link,
+  [data-variant='link'] {
+    border-color: transparent;
+  }
+}

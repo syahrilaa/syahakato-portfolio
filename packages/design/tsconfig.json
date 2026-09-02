@@ -1,0 +1,3 @@
+{
+  "extends": "@syahakato/internals/tsconfig/base"
+}

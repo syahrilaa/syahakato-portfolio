@@ -1,0 +1,67 @@
+@layer base {
+  :root,
+  [data-theme='light'],
+  [data-theme*='light'] {
+    color-scheme: light;
+
+    --granite-50: oklch(96.29% 0.003 228.78);
+    --granite-100: oklch(92.72% 0.005 197.06);
+    --granite-200: oklch(85.1% 0.01 204.9);
+    --granite-300: oklch(77.52% 0.016 202.01);
+    --granite-400: oklch(69.77% 0.021 200.54);
+    --granite-500: oklch(61.83% 0.027 199.58);
+    --granite-600: oklch(52.65% 0.023 200.41);
+    --granite-700: oklch(43.05% 0.018 201.82);
+    --granite-800: oklch(32.88% 0.012 204.76);
+    --granite-900: oklch(22.13% 0.007 196.62);
+    --granite-950: oklch(18.39% 0.005 219.75);
+
+    --vivid-tangerine-50: oklch(96.98% 0.023 71.79);
+    --vivid-tangerine-100: oklch(93.86% 0.044 68.35);
+    --vivid-tangerine-200: oklch(88.2% 0.088 68.49);
+    --vivid-tangerine-300: oklch(82.77% 0.129 66.17);
+    --vivid-tangerine-400: oklch(77.88% 0.162 61.92);
+    --vivid-tangerine-500: oklch(73.8% 0.183 54.69);
+    --vivid-tangerine-600: oklch(62.49% 0.155 55.06);
+    --vivid-tangerine-700: oklch(50.81% 0.124 56.37);
+    --vivid-tangerine-800: oklch(38.41% 0.091 58.93);
+    --vivid-tangerine-900: oklch(24.71% 0.056 63.84);
+    --vivid-tangerine-950: oklch(20.33% 0.045 67.17);
+
+    --background: var(--granite-50);
+    --foreground: var(--granite-800);
+
+    --surface: var(--background);
+    --on-surface: var(--foreground);
+
+    --primary: var(--vivid-tangerine-600);
+    --on-primary: var(--vivid-tangerine-100);
+
+    --secondary: var(--granite-700);
+    --on-secondary: var(--granite-50);
+
+    --tertiary: var(--granite-500);
+    --on-tertiary: var(--granite-50);
+  }
+
+  .dark,
+  [data-theme='dark'],
+  [data-theme*='dark'] {
+    color-scheme: dark;
+
+    --background: var(--granite-950);
+    --foreground: var(--granite-300);
+
+    --surface: var(--background);
+    --on-surface: var(--foreground);
+
+    --primary: var(--vivid-tangerine-400);
+    --on-primary: var(--vivid-tangerine-900);
+
+    --secondary: var(--granite-300);
+    --on-secondary: var(--granite-950);
+
+    --tertiary: var(--granite-500);
+    --on-tertiary: var(--granite-50);
+  }
+}
