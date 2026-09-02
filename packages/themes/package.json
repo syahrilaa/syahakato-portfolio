@@ -1,0 +1,22 @@
+{
+  "name": "@syahakato/themes",
+  "version": "0.1.0",
+  "private": true,
+  "exports": {
+    "./providers": {
+      "import": "./providers/index.ts",
+      "require": "./providers/index.ts"
+    }
+  },
+  "devDependencies": {
+    "@syahakato/internals": "workspace:^",
+    "@types/node": "^26.4.0",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.5",
+    "eslint": "^10.9.1",
+    "typescript": "^6.0.3"
+  },
+  "dependencies": {
+    "next-themes": "^0.4.6"
+  }
+}

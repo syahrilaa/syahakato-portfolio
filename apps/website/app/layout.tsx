@@ -1,3 +1,4 @@
+import { ScopedThemeProvider } from '@syahakato/themes/providers';
 import React from 'react';
 import './globals.css';
 import type { Metadata } from 'next';
@@ -9,8 +10,10 @@ export const metadata: Metadata = {
 
 const RootLayout: React.FC<{ readonly children: React.ReactNode }> = ({ children }) => {
   return (
-    <html lang="en" className="h-full antialiased">
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en" className="h-full antialiased" suppressHydrationWarning>
+      <body className="min-h-full flex flex-col">
+        <ScopedThemeProvider context="app-settings">{children}</ScopedThemeProvider>
+      </body>
     </html>
   );
 };
