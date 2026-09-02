@@ -1,0 +1,23 @@
+{
+  "name": "@syahakato/design",
+  "version": "0.1.0",
+  "private": true,
+  "sideEffects": [
+    "*.css"
+  ],
+  "exports": {
+    ".": {
+      "default": "./themes/index.css",
+      "style": "./themes/index.css"
+    }
+  },
+  "devDependencies": {
+    "@syahakato/internals": "workspace:^",
+    "@types/node": "^26.2.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^6.0.3"
+  },
+  "peerDependencies": {
+    "tailwindcss": "4"
+  }
+}

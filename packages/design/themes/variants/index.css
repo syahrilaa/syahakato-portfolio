@@ -1,0 +1,21 @@
+@custom-variant dark {
+  &:where(:is(.dark, .dark *, [data-theme*='dark'], [data-theme*='dark'] *)) {
+    @slot;
+
+    &::before,
+    &::after {
+      @slot;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    &:not(:is(.dark, .dark *, [data-theme*='dark'], [data-theme*='dark'] *)) & {
+      @slot;
+
+      &::before,
+      &::after {
+        @slot;
+      }
+    }
+  }
+}

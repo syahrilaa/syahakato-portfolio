@@ -1,0 +1,14 @@
+@layer base, theme, components, utilities;
+@import 'tailwindcss';
+
+@source "../../../apps/website/**/*.{js,ts,jsx,tsx}";
+@source "../../../packages/**/*.{js,ts,jsx,tsx}";
+
+@import './base.css' layer(base);
+
+@import './colors/variables.css' layer(base);
+@import './colors/shared.css' layer(theme);
+
+@import './variants/index.css';
+
+@import './transitions.css' layer(theme);

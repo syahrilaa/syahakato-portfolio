@@ -1,0 +1,5 @@
+{
+  "extends": "@syahakato/internals/tsconfig/react-library",
+  "include": ["components/**/*"],
+  "exclude": ["node_modules"]
+}
