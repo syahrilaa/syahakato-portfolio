@@ -1,5 +1,5 @@
 @layer base, theme, components, utilities;
 @import 'tailwindcss';
-@import '@syahakato/desgin';
+@import '@syahakato/design';
 
 @import './components/components.css' layer(components);
