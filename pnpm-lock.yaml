@@ -49,9 +49,15 @@ importers:
         specifier: 19.2.8
         version: 19.2.8(react@19.2.8)
     devDependencies:
+      '@syahakato/design':
+        specifier: workspace:^
+        version: link:../../packages/design
       '@syahakato/internals':
         specifier: workspace:^
         version: link:../../packages/internals
+      '@syahakato/ui':
+        specifier: workspace:^
+        version: link:../../packages/ui
       '@tailwindcss/postcss':
         specifier: ^4.3.3
         version: 4.3.3
