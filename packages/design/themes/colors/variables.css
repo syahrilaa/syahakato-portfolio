@@ -35,6 +35,7 @@
 
     --surface: var(--background);
     --on-surface: var(--foreground);
+    --surface-container: var(--onyx-100);
 
     --primary: var(--verdi-600);
     --on-primary: var(--verdi-100);
@@ -52,10 +53,11 @@
     color-scheme: dark;
 
     --background: var(--onyx-950);
-    --foreground: var(--onyx-300);
+    --foreground: var(--onyx-200);
 
     --surface: var(--background);
     --on-surface: var(--foreground);
+    --surface-container: var(--onyx-900);
 
     --primary: var(--verdi-400);
     --on-primary: var(--verdi-900);

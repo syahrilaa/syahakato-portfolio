@@ -11,4 +11,6 @@
 
 @import './variants/index.css';
 
-@import './transitions.css' layer(theme);
+@import './transitions.css';
+
+@import './animation.css';

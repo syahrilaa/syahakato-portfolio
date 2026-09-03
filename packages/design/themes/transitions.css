@@ -1,5 +1,18 @@
 @layer base {
   :root {
+    --transition-fast-smooth: all var(--duration-fast) var(--ease-smooth);
+    --transition-normal-smooth: all var(--duration-normal) var(--ease-smooth);
+    --transition-spring: transform var(--duration-slow) var(--ease-spring-soft);
+    --transition-bouncy: transform var(--duration-slow) var(--ease-spring-medium);
+  }
+
+  @theme inline {
+    --duration-instant: 50ms;
+    --duration-fast: 150ms;
+    --duration-normal: 250ms;
+    --duration-slow: 400ms;
+    --duration-deliberate: 600ms;
+
     --ease-linear: cubic-bezier(0, 0, 1, 1);
 
     --ease-smooth: cubic-bezier(0.25, 1, 0.5, 1);
@@ -13,15 +26,12 @@
 
     --ease-expressive: cubic-bezier(0.16, 1, 0.3, 1);
 
-    --duration-instant: 50ms;
-    --duration-fast: 150ms;
-    --duration-normal: 250ms;
-    --duration-slow: 400ms;
-    --duration-deliberate: 600ms;
-
-    --transition-fast-smooth: all var(--duration-fast) var(--ease-smooth);
-    --transition-normal-smooth: all var(--duration-normal) var(--ease-smooth);
-    --transition-spring: transform var(--duration-slow) var(--ease-spring-soft);
-    --transition-bouncy: transform var(--duration-slow) var(--ease-spring-medium);
+    --default-transition-duration: var(--duration-normal);
+    --default-transition-timing-function: var(--ease-spring-medium);
   }
+}
+
+@utility duration-* {
+  animation-duration: --value(--duration-*, integer, [time]);
+  transition-duration: --value(--duration-*, integer, [time]);
 }

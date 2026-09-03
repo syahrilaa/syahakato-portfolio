@@ -4,6 +4,7 @@
 
   --color-surface: var(--surface);
   --color-on-surface: var(--on-surface);
+  --color-surface-container: var(--surface-container);
 
   --color-primary: var(--primary);
   --color-on-primary: var(--on-primary);
